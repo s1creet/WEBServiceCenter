@@ -1,0 +1,37 @@
+﻿@page
+@model ServiceCenter.Pages.shops.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ОбслуживаемыеМагазины</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ОбслуживаемыеМагазины.Наименование)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ОбслуживаемыеМагазины.Наименование)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ОбслуживаемыеМагазины.Адрес)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ОбслуживаемыеМагазины.Адрес)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ОбслуживаемыеМагазины.Телефон)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ОбслуживаемыеМагазины.Телефон)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ОбслуживаемыеМагазины.КодМагазина">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

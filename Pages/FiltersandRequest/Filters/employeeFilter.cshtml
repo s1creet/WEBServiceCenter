@@ -1,0 +1,35 @@
+﻿@page
+@model ServiceCenter.Pages.FiltersandRequest.Filters.employeeFilterModel
+@{
+}
+
+<h1>Отдел кадров</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудник[0].ФИО)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудник[0].КодДолжности)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Сотрудник)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ФИО)
+                </td>
+                <td>
+                    @Model.Должность.НаименованиеДолжности
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

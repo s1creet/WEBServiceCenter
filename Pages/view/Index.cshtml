@@ -1,0 +1,78 @@
+﻿@page
+@model ServiceCenter.Pages.view.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].Описание)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].Симптомы)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].МетодыРемонта)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].ЦенаРаботы)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].Запчасть2кодЗапчастиNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].Запчасть3кодЗапчастиNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].КодЗапчастиNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ВидыНеисправностей[0].КодМоделиNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ВидыНеисправностей) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Описание)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Симптомы)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.МетодыРемонта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ЦенаРаботы)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Запчасть2кодЗапчастиNavigation.КодЗапчасти)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Запчасть3кодЗапчастиNavigation.КодЗапчасти)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодЗапчастиNavigation.КодЗапчасти)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодМоделиNavigation.КодМодели)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.КодВида">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.КодВида">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.КодВида">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

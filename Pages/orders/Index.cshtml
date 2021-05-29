@@ -1,0 +1,96 @@
+﻿@page
+@model ServiceCenter.Pages.orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].ДатаЗаказа)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].ДатаВозврата)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].ФиоЗаказчика)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].СерийныеНомер)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].КодВидаНеисправности)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].ОтметкаОГарантии)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].СкорГарантииРемонта)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].Цена)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].КодВидаNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].КодМагазинаNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Заказы[0].КодСотрудникаNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Заказы) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаЗаказа)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ДатаВозврата)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ФиоЗаказчика)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.СерийныеНомер)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодВидаНеисправности)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ОтметкаОГарантии)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.СкорГарантииРемонта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Цена)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодВидаNavigation.КодВида)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодМагазинаNavigation.КодМагазина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодСотрудникаNavigation.КодСотрудника)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ЗаказыId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ЗаказыId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ЗаказыId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

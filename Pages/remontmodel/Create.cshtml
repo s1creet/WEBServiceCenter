@@ -1,0 +1,59 @@
+﻿@page
+@model ServiceCenter.Pages.remontmodel.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>РемонтируемыеМодели</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="РемонтируемыеМодели.КодМодели" class="control-label"></label>
+                <input asp-for="РемонтируемыеМодели.КодМодели" class="form-control" />
+                <span asp-validation-for="РемонтируемыеМодели.КодМодели" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="РемонтируемыеМодели.Наименование" class="control-label"></label>
+                <input asp-for="РемонтируемыеМодели.Наименование" class="form-control" />
+                <span asp-validation-for="РемонтируемыеМодели.Наименование" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="РемонтируемыеМодели.Тип" class="control-label"></label>
+                <input asp-for="РемонтируемыеМодели.Тип" class="form-control" />
+                <span asp-validation-for="РемонтируемыеМодели.Тип" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="РемонтируемыеМодели.Производитель" class="control-label"></label>
+                <input asp-for="РемонтируемыеМодели.Производитель" class="form-control" />
+                <span asp-validation-for="РемонтируемыеМодели.Производитель" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="РемонтируемыеМодели.ТехническиеХарантеристики" class="control-label"></label>
+                <input asp-for="РемонтируемыеМодели.ТехническиеХарантеристики" class="form-control" />
+                <span asp-validation-for="РемонтируемыеМодели.ТехническиеХарантеристики" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="РемонтируемыеМодели.Особенности" class="control-label"></label>
+                <input asp-for="РемонтируемыеМодели.Особенности" class="form-control" />
+                <span asp-validation-for="РемонтируемыеМодели.Особенности" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

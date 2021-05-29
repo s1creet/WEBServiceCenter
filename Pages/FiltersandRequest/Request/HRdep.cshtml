@@ -1,0 +1,43 @@
+﻿@page
+@model ServiceCenter.Pages.FiltersandRequest.Request.HRdepModel
+@{
+}
+<h1>Отдел кадров</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудникиs[0].ФИО)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудникиs[0].КодДолжности)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Сотрудникиs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ФИО)
+                </td>
+                <td>
+                    @{
+                        try
+                        {
+                            @Model.Должностиs.First(r => r.КодДолжности == item.КодДолжности).Сотрудникиs
+                        }
+                        catch
+                        {
+                            <p> Данных нет </p>
+                        }
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

@@ -1,0 +1,48 @@
+﻿@page
+@model ServiceCenter.Pages.shops.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ОбслуживаемыеМагазины[0].Наименование)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ОбслуживаемыеМагазины[0].Адрес)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ОбслуживаемыеМагазины[0].Телефон)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ОбслуживаемыеМагазины) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Адрес)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.КодМагазина">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.КодМагазина">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.КодМагазина">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

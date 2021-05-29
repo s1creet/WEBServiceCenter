@@ -1,0 +1,88 @@
+﻿@page
+@model ServiceCenter.Pages.orders.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Заказы</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.ДатаЗаказа)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.ДатаЗаказа)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.ДатаВозврата)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.ДатаВозврата)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.ФиоЗаказчика)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.ФиоЗаказчика)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.СерийныеНомер)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.СерийныеНомер)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.КодВидаНеисправности)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.КодВидаНеисправности)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.ОтметкаОГарантии)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.ОтметкаОГарантии)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.СкорГарантииРемонта)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.СкорГарантииРемонта)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.Цена)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.Цена)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.КодВидаNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.КодВидаNavigation.КодВида)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.КодМагазинаNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.КодМагазинаNavigation.КодМагазина)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Заказы.КодСотрудникаNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Заказы.КодСотрудникаNavigation.КодСотрудника)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Заказы.ЗаказыId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

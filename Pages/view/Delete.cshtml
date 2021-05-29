@@ -1,0 +1,70 @@
+﻿@page
+@model ServiceCenter.Pages.view.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ВидыНеисправностей</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.Описание)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.Описание)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.Симптомы)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.Симптомы)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.МетодыРемонта)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.МетодыРемонта)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.ЦенаРаботы)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.ЦенаРаботы)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.Запчасть2кодЗапчастиNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.Запчасть2кодЗапчастиNavigation.КодЗапчасти)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.Запчасть3кодЗапчастиNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.Запчасть3кодЗапчастиNavigation.КодЗапчасти)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.КодЗапчастиNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.КодЗапчастиNavigation.КодЗапчасти)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ВидыНеисправностей.КодМоделиNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ВидыНеисправностей.КодМоделиNavigation.КодМодели)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ВидыНеисправностей.КодВида" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

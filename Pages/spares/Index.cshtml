@@ -1,0 +1,48 @@
+﻿@page
+@model ServiceCenter.Pages.spares.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Запчасти[0].Наименования)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Запчасти[0].Функции)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Запчасти[0].Цена)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Запчасти) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименования)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Функции)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Цена)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.КодЗапчасти">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.КодЗапчасти">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.КодЗапчасти">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

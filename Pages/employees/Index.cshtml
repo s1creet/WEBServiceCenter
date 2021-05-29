@@ -1,0 +1,60 @@
+﻿@page
+@model ServiceCenter.Pages.employees.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Главная</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудники[0].ПаспортныеДанные)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудники[0].Телефон)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудники[0].Адрес)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудники[0].Пол)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Сотрудники[0].КодДолжностиNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Сотрудники) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ПаспортныеДанные)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Адрес)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пол)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.КодДолжностиNavigation.КодДолжности)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.КодСотрудника">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.КодСотрудника">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.КодСотрудника">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

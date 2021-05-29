@@ -1,0 +1,70 @@
+﻿@page
+@model ServiceCenter.Pages.view.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ВидыНеисправностей</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.КодВида" class="control-label"></label>
+                <input asp-for="ВидыНеисправностей.КодВида" class="form-control" />
+                <span asp-validation-for="ВидыНеисправностей.КодВида" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.Описание" class="control-label"></label>
+                <input asp-for="ВидыНеисправностей.Описание" class="form-control" />
+                <span asp-validation-for="ВидыНеисправностей.Описание" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.Симптомы" class="control-label"></label>
+                <input asp-for="ВидыНеисправностей.Симптомы" class="form-control" />
+                <span asp-validation-for="ВидыНеисправностей.Симптомы" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.МетодыРемонта" class="control-label"></label>
+                <input asp-for="ВидыНеисправностей.МетодыРемонта" class="form-control" />
+                <span asp-validation-for="ВидыНеисправностей.МетодыРемонта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.ЦенаРаботы" class="control-label"></label>
+                <input asp-for="ВидыНеисправностей.ЦенаРаботы" class="form-control" />
+                <span asp-validation-for="ВидыНеисправностей.ЦенаРаботы" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.КодЗапчасти" class="control-label"></label>
+                <select asp-for="ВидыНеисправностей.КодЗапчасти" class ="form-control" asp-items="ViewBag.КодЗапчасти"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.КодМодели" class="control-label"></label>
+                <select asp-for="ВидыНеисправностей.КодМодели" class ="form-control" asp-items="ViewBag.КодМодели"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.Запчасть2кодЗапчасти" class="control-label"></label>
+                <select asp-for="ВидыНеисправностей.Запчасть2кодЗапчасти" class ="form-control" asp-items="ViewBag.Запчасть2кодЗапчасти"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ВидыНеисправностей.Запчасть3кодЗапчасти" class="control-label"></label>
+                <select asp-for="ВидыНеисправностей.Запчасть3кодЗапчасти" class ="form-control" asp-items="ViewBag.Запчасть3кодЗапчасти"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

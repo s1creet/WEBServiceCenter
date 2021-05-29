@@ -1,0 +1,50 @@
+﻿@page
+@model ServiceCenter.Pages.position.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Должности</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Должности.КодДолжности" />
+            <div class="form-group">
+                <label asp-for="Должности.НаименованиеДолжности" class="control-label"></label>
+                <input asp-for="Должности.НаименованиеДолжности" class="form-control" />
+                <span asp-validation-for="Должности.НаименованиеДолжности" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Должности.Оклад" class="control-label"></label>
+                <input asp-for="Должности.Оклад" class="form-control" />
+                <span asp-validation-for="Должности.Оклад" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Должности.Обязанности" class="control-label"></label>
+                <input asp-for="Должности.Обязанности" class="form-control" />
+                <span asp-validation-for="Должности.Обязанности" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Должности.Требования" class="control-label"></label>
+                <input asp-for="Должности.Требования" class="form-control" />
+                <span asp-validation-for="Должности.Требования" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

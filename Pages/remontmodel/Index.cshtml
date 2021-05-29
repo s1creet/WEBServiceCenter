@@ -1,0 +1,60 @@
+﻿@page
+@model ServiceCenter.Pages.remontmodel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.РемонтируемыеМодели[0].Наименование)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.РемонтируемыеМодели[0].Тип)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.РемонтируемыеМодели[0].Производитель)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.РемонтируемыеМодели[0].ТехническиеХарантеристики)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.РемонтируемыеМодели[0].Особенности)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.РемонтируемыеМодели) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Тип)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Производитель)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ТехническиеХарантеристики)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Особенности)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.КодМодели">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.КодМодели">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.КодМодели">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

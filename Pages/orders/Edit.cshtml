@@ -1,0 +1,85 @@
+﻿@page
+@model ServiceCenter.Pages.orders.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Заказы</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Заказы.ЗаказыId" />
+            <div class="form-group">
+                <label asp-for="Заказы.ДатаЗаказа" class="control-label"></label>
+                <input asp-for="Заказы.ДатаЗаказа" class="form-control" />
+                <span asp-validation-for="Заказы.ДатаЗаказа" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.ДатаВозврата" class="control-label"></label>
+                <input asp-for="Заказы.ДатаВозврата" class="form-control" />
+                <span asp-validation-for="Заказы.ДатаВозврата" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.ФиоЗаказчика" class="control-label"></label>
+                <input asp-for="Заказы.ФиоЗаказчика" class="form-control" />
+                <span asp-validation-for="Заказы.ФиоЗаказчика" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.СерийныеНомер" class="control-label"></label>
+                <input asp-for="Заказы.СерийныеНомер" class="form-control" />
+                <span asp-validation-for="Заказы.СерийныеНомер" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.КодВидаНеисправности" class="control-label"></label>
+                <input asp-for="Заказы.КодВидаНеисправности" class="form-control" />
+                <span asp-validation-for="Заказы.КодВидаНеисправности" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.ОтметкаОГарантии" class="control-label"></label>
+                <input asp-for="Заказы.ОтметкаОГарантии" class="form-control" />
+                <span asp-validation-for="Заказы.ОтметкаОГарантии" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.СкорГарантииРемонта" class="control-label"></label>
+                <input asp-for="Заказы.СкорГарантииРемонта" class="form-control" />
+                <span asp-validation-for="Заказы.СкорГарантииРемонта" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.Цена" class="control-label"></label>
+                <input asp-for="Заказы.Цена" class="form-control" />
+                <span asp-validation-for="Заказы.Цена" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.КодСотрудника" class="control-label"></label>
+                <select asp-for="Заказы.КодСотрудника" class="form-control" asp-items="ViewBag.КодСотрудника"></select>
+                <span asp-validation-for="Заказы.КодСотрудника" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.КодМагазина" class="control-label"></label>
+                <select asp-for="Заказы.КодМагазина" class="form-control" asp-items="ViewBag.КодМагазина"></select>
+                <span asp-validation-for="Заказы.КодМагазина" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Заказы.КодВида" class="control-label"></label>
+                <select asp-for="Заказы.КодВида" class="form-control" asp-items="ViewBag.КодВида"></select>
+                <span asp-validation-for="Заказы.КодВида" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

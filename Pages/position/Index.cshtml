@@ -1,0 +1,54 @@
+﻿@page
+@model ServiceCenter.Pages.position.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Должности[0].НаименованиеДолжности)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Должности[0].Оклад)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Должности[0].Обязанности)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Должности[0].Требования)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Должности) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.НаименованиеДолжности)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Оклад)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Обязанности)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Требования)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.КодДолжности">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.КодДолжности">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.КодДолжности">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
